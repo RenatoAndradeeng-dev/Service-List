@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Adicione um Paciente{% endblock %}
+
+{% block content %}
+<div class="offset-t col-12 list-div">
+    <h1>Adicionar nova consulta:</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success" value="Criar Consulta">
+    </form>
+</div>
+{% endblock %}
